@@ -348,7 +348,7 @@ public class NetLoader
     {
         if (junkFunction(methodInfo) == methodInfo.ReflectedType)
             methodInfo.Invoke(null, globalArgs);
-        Console.ReadLine();
+        //Console.ReadLine();
         return globalArgs[0];
     }
 
